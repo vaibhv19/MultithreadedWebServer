@@ -1,73 +1,77 @@
 🌐 Multithreaded Web Server (Java)
 🚀 Overview
 
-This project is a lightweight multithreaded HTTP web server built from scratch using Core Java. It handles multiple client requests concurrently using thread pools and low-level socket programming, demonstrating key backend and system design concepts.
+A lightweight HTTP web server built from scratch using Core Java, capable of handling multiple client requests concurrently using multithreading. This project demonstrates how real-world servers manage concurrent connections, parse HTTP requests, and generate responses efficiently.
 
-⚙️ Features
-🔹 Handles multiple client requests concurrently using multithreading
-🔹 Implements HTTP request parsing (GET/POST)
-🔹 Serves static files (HTML, CSS, JS)
-🔹 Basic error handling (404 Not Found, 500 Internal Server Error)
-🔹 Efficient thread management using ExecutorService
-🔹 Socket-based client-server communication
-🏗️ Architecture
-Client → Socket → Request Parser → Thread Pool → Response Generator → Client
-Flow Explanation:
-Client sends an HTTP request
-Server accepts connection via socket
-Request is parsed (method, path, headers)
-Task is submitted to thread pool
-Response is generated and sent back to client
-🧠 Concepts Used
+✨ Features
+⚡ Concurrent request handling using multithreading
+🧵 Thread pool implementation with ExecutorService
+🌍 HTTP request parsing (GET, POST support)
+📄 Static file serving (HTML, CSS, JS)
+❌ Error handling (404 Not Found, 500 Internal Server Error)
+🔌 Low-level socket programming (TCP-based communication)
+🏗️ System Architecture
+Client → Server Socket → Request Parser → Thread Pool → Response Generator → Client
+🔍 Flow
+Server listens for incoming client connections
+Each request is delegated to a thread from the pool
+HTTP request is parsed (method, headers, path)
+Appropriate response is generated
+Response is sent back to the client
+🧠 Concepts Covered
 Multithreading & Concurrency
 Thread Pool (ExecutorService)
 Socket Programming
-HTTP Protocol Basics
+HTTP Protocol (Request/Response lifecycle)
 File I/O
 Exception Handling
 📁 Project Structure
 /src
- ├── Server.java
- ├── ClientHandler.java
- ├── RequestParser.java
- ├── ResponseBuilder.java
- └── utils/
-▶️ How to Run
-1. Clone the repository
+ ├── Server.java              # Entry point, initializes server & thread pool
+ ├── ClientHandler.java       # Handles individual client requests
+ ├── RequestParser.java       # Parses HTTP requests
+ ├── ResponseBuilder.java     # Builds HTTP responses
+ └── utils/                   # Helper classes (if any)
+▶️ Getting Started
+🔧 Prerequisites
+Java JDK 8 or higher
+📥 Installation
 git clone https://github.com/your-username/multithreaded-web-server.git
 cd multithreaded-web-server
-2. Compile the code
+⚙️ Compile
 javac *.java
-3. Run the server
+▶️ Run
 java Server
-4. Open in browser
+🌐 Access
+
+Open your browser and go to:
+
 http://localhost:8080
 🧪 Testing
-Using Browser:
-
-Open:
-
+Browser
 http://localhost:8080/index.html
-Using curl:
+cURL
 curl http://localhost:8080
-⚡ Performance
-Uses a fixed-size thread pool to efficiently manage concurrent requests
-Reduces overhead compared to creating a new thread per request
-Improves scalability under moderate load
-🔥 Future Improvements
-Add support for HTTP/1.1 persistent connections
-Implement caching mechanism
-Add request logging system
+⚡ Performance Insights
+Uses a fixed-size thread pool to avoid excessive thread creation
+Improves scalability compared to thread-per-request model
+Handles multiple simultaneous connections efficiently
+🔮 Future Enhancements
+Persistent connections (HTTP/1.1 Keep-Alive)
+Request logging system
+Caching mechanism for faster responses
+Rate limiting for handling heavy traffic
 Support for dynamic content
-Rate limiting and security enhancements
 🎯 Learning Outcomes
-Understood how web servers work internally
+Built a web server from scratch without frameworks
+Understood how HTTP communication works internally
 Learned concurrency and thread management in Java
-Gained hands-on experience with networking and HTTP protocol
-Improved system design thinking
-📌 Tech Stack
-Java (Core Java, JDK 8+)
-No external frameworks (built from scratch)
-🙌 Acknowledgements
+Improved system design and debugging skills
+🛠️ Tech Stack
+Java (Core Java)
+Java Sockets
+ExecutorService (Thread Pool)
+No external frameworks
+🙌 Author
 
-This project was built as part of backend/system design learning to understand how real-world web servers handle concurrent requests.
+Vaibhav Gupta
