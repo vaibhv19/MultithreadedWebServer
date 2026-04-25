@@ -46,7 +46,7 @@ Client → Server Socket → Request Parser → Thread Pool → Response Generat
 - Java JDK 8 or higher  
 
 ### Installation
-git clone https://github.com/your-username/multithreaded-web-server.git  
+git clone https://github.com/vaibhv19/multithreadedwebserver.git  
 cd multithreaded-web-server  
 
 ### Compile
