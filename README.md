@@ -1,4 +1,4 @@
-# 🌐 Multithreaded Web Server (Java)
+# 🌐 Multithreaded Web Server 
 
 ## 🚀 Overview
 A lightweight HTTP web server built from scratch using Core Java, capable of handling multiple client requests concurrently using multithreading. This project demonstrates how real-world servers manage concurrent connections, parse HTTP requests, and generate responses efficiently.
